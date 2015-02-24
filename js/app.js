@@ -1,30 +1,24 @@
-// var quizApp = angular.module('quizApp', ['ngRoute']);
+//stores the tasks
+var taskBank = [];
+
+//assigns tasks to number
+var taskNumber = 0;
+
+var createTask = function(){
+	//takes whatever is in the input and pushes it
+	// if (taskNumber != 0) {
+	// 	taskBank.push($('input').val());
+	// }
+	taskBank.push($('input').val());
+
+	$('.taskhold').html('<li>'+taskBank+'</li>');
+	taskNumber = taskNumber + 1;
+}
 
 
-// quizApp.config(function($routeProvider) {
-//   //set up routes
-//   $routeProvider
-//     .when('/', {
-//       templateUrl: 'app_pages/main.html',
-//       controller: 'mainController'
-//     })
-
-//     .when('/type', {
-//       templateUrl: 'app_pages/quizA_start.html'
-//     })
-
-//     .when('/q1', {
-//       templateUrl: 'app_pages/quizA_1.html',
-//       controller: 'quizQ1Controller'
-//     })
-
-//     .when('/result', {
-
-//       templateUrl: 'app_pages/quizA_result.html'
-//     })
-
-//     .otherwise( {
-//     	redirectTo: '/'
-//     })
-
-// });
+//when clicked on button then task gets created
+$(document).ready(function() {
+	$('.addBtn').click(function() {
+		createTask();
+	});
+});
