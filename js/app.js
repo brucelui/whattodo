@@ -15,10 +15,17 @@ var createTask = function(){
 	taskNumber = taskNumber + 1;
 }
 
-
 //when clicked on button then task gets created
 $(document).ready(function() {
+
+	var animationName = 'animated rotateIn';
+	var animationend = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
 	$('.addBtn').click(function() {
+		$('button[class=addBtn]').addClass(animationName).one(animationend,
+			function() {
+				$(this).removeClass(animationName);
+			});
 		createTask();
 	});
 });
