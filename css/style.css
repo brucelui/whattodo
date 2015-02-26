@@ -58,6 +58,19 @@ button {
    color:    #b0a067;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+	width: 100%;
+	background-color: #F6FEAA;
+	padding: 15px;
+	margin-bottom: 5px;
+}
+
 /* ---- MAIN ---- */
 
 .taskinput {

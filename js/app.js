@@ -1,18 +1,22 @@
 //stores the tasks
-var taskBank = [];
-
-//assigns tasks to number
-var taskNumber = 0;
+// var taskBank = [];
 
 var createTask = function(){
 	//takes whatever is in the input and pushes it
 	// if (taskNumber != 0) {
 	// 	taskBank.push($('input').val());
 	// }
-	taskBank.push($('input').val());
 
-	$('.taskhold').html('<li>'+taskBank+'</li>');
-	taskNumber = taskNumber + 1;
+	//takes the input object
+	var $taskBank = $('input').val();
+
+	if ($taskBank.length > 0) {
+		$('ul').append('<li>' + $taskBank + '</li>');
+	}
+	// $('.taskhold').html('<li>'+taskBank+'</li>');
+
+	//resets input value
+	$('input').val('');
 }
 
 
