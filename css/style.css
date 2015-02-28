@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+textarea:focus, input:focus, button:focus{
+    outline: 0;
+}
+
 html, body {
 	height: 100%;
 	font-family: 'Roboto', 'Lato', sans-serif;
@@ -96,4 +100,22 @@ h1 {
 	color: #FCFCFC;
 	padding: 15px 0px 0px 10px;
 	margin: 0px;
+}
+
+
+
+
+/* ---- ANIMATIONS I THINK ---- */
+
+@keyframes startAdd{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(360deg);
+	}
+}
+
+.addButton {
+	animation: startAdd 2s ease;
 }
