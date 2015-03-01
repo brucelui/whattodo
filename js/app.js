@@ -13,10 +13,6 @@ var createTask = function(){
 	//takes the input object
 	var $taskBank = $('input').val();
 	if ($taskBank.length > 0) {
-<<<<<<< Updated upstream
-		$('ul').append('<li class="tasks">' + $taskBank + '</li>');
-		
-=======
 		$('ul').append('<li class="tasks" id="tasks">' + $taskBank + '</li>');
 		//assign new event handlers to new tasks
 		$('.tasks').hammer().on('swiperight', function() {
@@ -25,7 +21,6 @@ var createTask = function(){
 		    	$(this).remove();
 			}); 
 		});
->>>>>>> Stashed changes
 	}
 
 	// $('.taskhold').html('<li>'+taskBank+'</li>');
@@ -51,10 +46,6 @@ $(document).ready(function() {
 		taskNumber++;
 		console.log(taskNumber);
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 		
 	});
 });
