@@ -13,8 +13,19 @@ var createTask = function(){
 	//takes the input object
 	var $taskBank = $('input').val();
 	if ($taskBank.length > 0) {
+<<<<<<< Updated upstream
 		$('ul').append('<li class="tasks">' + $taskBank + '</li>');
 		
+=======
+		$('ul').append('<li class="tasks" id="tasks">' + $taskBank + '</li>');
+		//assign new event handlers to new tasks
+		$('.tasks').hammer().on('swiperight', function() {
+			//deletes the task
+			$(this).hide(100, function() {
+		    	$(this).remove();
+			}); 
+		});
+>>>>>>> Stashed changes
 	}
 
 	// $('.taskhold').html('<li>'+taskBank+'</li>');
@@ -40,7 +51,36 @@ $(document).ready(function() {
 		taskNumber++;
 		console.log(taskNumber);
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 		
 	});
 });
+
+//when you swiperight a task
+
+$(window).load(function() {
+		
+	var deleteTask = function(){
+		$('#tasks').hammer().on('swiperight', function() {
+			
+			//deletes the task
+			$(this).hide(100, function() {
+		    	$(this).remove();
+			}); 
+		    console.log('omgitworks');
+		});
+	};
+	deleteTask();
+});
+
+
+
+// $(window).load(function() {
+		
+// 		$('#tasks').click( function() {
+// 		    console.log('omgitworks');
+// 		});
+// });
