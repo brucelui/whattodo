@@ -15,11 +15,20 @@ var createTask = function(){
 	if ($taskBank.length > 0) {
 		$('ul').append('<li class="tasks" id="tasks">' + $taskBank + '</li>');
 		//assign new event handlers to new tasks
-		$('.tasks').hammer().on('swiperight', function() {
+		$('.tasks').hammer().on('swiperight swipeleft', function() {
 			//deletes the task
-			$(this).hide(100, function() {
-		    	$(this).remove();
-			}); 
+			$(this).css({
+				"-webkit-transition": "-webkit-transform 1s ease-in-out",
+		 	    "-webkit-transform":"translate(500px)",
+		  	    "-ms-transform":"translate(500px)",
+		  	    "transform":"translate(500px)"
+		 	}).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
+		 		$(this).slideUp(300, function() {
+					$(this).remove();
+				}); 
+		 	});
+		    console.log('omgitworks');
+
 		});
 	}
 
@@ -55,12 +64,20 @@ $(document).ready(function() {
 $(window).load(function() {
 		
 	var deleteTask = function(){
-		$('#tasks').hammer().on('swiperight', function() {
-			
+		$('#tasks').hammer().on('swiperight swipeleft', function() {
+//			$(this).css('transform: translateX(this.position)');
 			//deletes the task
-			$(this).hide(100, function() {
-		    	$(this).remove();
-			}); 
+			$(this).css({
+				"-webkit-transition": "-webkit-transform 1s ease-in-out",
+		 	    "-webkit-transform":"translate(500px)",
+		  	    "-ms-transform":"translate(500px)",
+		  	    "transform":"translate(500px)"
+		 	}).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
+		 		$(this).slideUp(300, function() {
+					$(this).remove();
+				}); 
+		 	});
+
 		    console.log('omgitworks');
 		});
 	};

@@ -69,6 +69,7 @@ ul {
 }
 
 li {
+	position: 0;
 	width: 100%;
 	background-color: #F6FEAA;
 	padding: 15px;
@@ -100,22 +101,4 @@ h1 {
 	color: #FCFCFC;
 	padding: 15px 0px 0px 10px;
 	margin: 0px;
-}
-
-
-
-
-/* ---- ANIMATIONS I THINK ---- */
-
-@keyframes startAdd{
-	from{
-		transform: rotateY(0deg);
-	}
-	to{
-		transform: rotateY(360deg);
-	}
-}
-
-.addButton {
-	animation: startAdd 2s ease;
 }
